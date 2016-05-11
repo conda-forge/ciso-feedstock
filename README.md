@@ -5,7 +5,7 @@ Home: https://github.com/ioos/ciso
 
 Package license: MIT
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Cythonized Iso Surfaces (CISO)
 
