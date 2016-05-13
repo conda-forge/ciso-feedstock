@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ciso-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/ciso-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/ciso-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ciso-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ciso-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ciso-feedstock/branch/master)
