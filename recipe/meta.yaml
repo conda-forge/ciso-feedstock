@@ -26,6 +26,8 @@ requirements:
 test:
     imports:
         - ciso
+    commands:
+        - conda inspect linkages -n _test ciso  # [linux]
 
 about:
     home: https://github.com/ioos/ciso
