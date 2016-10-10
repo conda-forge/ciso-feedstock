@@ -1,39 +1,39 @@
 {% set version = "0.0.1" %}
 
 package:
-    name: ciso
-    version: {{ version }}
+  name: ciso
+  version: {{ version }}
 
 source:
-    fn: v{{ version }}.tar.gz
-    url: https://github.com/ioos/ciso/archive/v{{ version }}.tar.gz
-    md5: f5f3465cbc3549d2c77068c46725376e
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/ioos/ciso/archive/v{{ version }}.tar.gz
+  sha256: 8d28c4df6eca3b683d8a2efed8da9b0699c98efe3c53e23203a1c1169f9d54b3
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
-        - cython
-        - numpy x.x
-    run:
-        - python
-        - numpy x.x
+  build:
+    - python
+    - setuptools
+    - cython
+    - numpy x.x
+  run:
+    - python
+    - numpy x.x
 
 test:
-    imports:
-        - ciso
-    commands:
-        - conda inspect linkages -n _test ciso  # [linux]
+  imports:
+    - ciso
+  #commands:
+    #- conda inspect linkages -p $PREFIX ciso  # [not win]
 
 about:
-    home: https://github.com/ioos/ciso
-    license: MIT
-    summary: Cythonized Iso Surfaces (CISO)
+  home: https://github.com/ioos/ciso
+  license: MIT
+  summary: 'Cythonized Iso Surfaces (CISO).'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
