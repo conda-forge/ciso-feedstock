@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Cythonized Iso Surfaces (CISO)
+Summary: Cythonized Iso Surfaces (CISO).
 
 
 
@@ -31,7 +31,6 @@ It is possible to list all of the versions of `ciso` available on your platform 
 ```
 conda search ciso --channel conda-forge
 ```
-
 
 
 About conda-forge
