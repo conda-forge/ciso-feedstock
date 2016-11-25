@@ -28,6 +28,7 @@ test:
     - ciso
   #commands:
     #- conda inspect linkages -p $PREFIX ciso  # [not win]
+    #- conda inspect objects -p $PREFIX ciso  # [osx]
 
 about:
   home: https://github.com/ioos/ciso
