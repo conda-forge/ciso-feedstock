@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Cythonized Iso Surfaces (CISO).
+Summary: Cythonized Iso Surfaces (CISO)
 
 
 
