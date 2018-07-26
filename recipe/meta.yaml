@@ -9,37 +9,33 @@ source:
   sha256: 8d28c4df6eca3b683d8a2efed8da9b0699c98efe3c53e23203a1c1169f9d54b3
 
 build:
-  number: 2
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 3
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
     - cython
-    - numpy        # [py27]
-    - numpy        # [py35]
-    - numpy         # [py36]
+    - numpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}   # [py27]
-    - {{ pin_compatible('numpy') }}   # [py35]
-    - {{ pin_compatible('numpy') }}   # [py36]
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - ciso
   commands:
-    - conda inspect linkages -p $PREFIX ciso  # [not win]
-    - conda inspect objects -p $PREFIX ciso  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/ioos/ciso
   license: MIT
   license_file: LICENSE.txt
-  summary: 'Cythonized Iso Surfaces (CISO).'
+  summary: 'Cythonized Iso Surfaces (CISO)'
 
 extra:
   recipe-maintainers:
