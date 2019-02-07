@@ -1,4 +1,4 @@
-{% set version = "0.0.1" %}
+{% set version = "0.1.0" %}
 
 package:
   name: ciso
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ioos/ciso/archive/v{{ version }}.tar.gz
-  sha256: 8d28c4df6eca3b683d8a2efed8da9b0699c98efe3c53e23203a1c1169f9d54b3
+  sha256: d2a2a7d76fd23e7b20a715bd02e34e2843c3924c75ea4253dc141bc8628e2af0
 
 build:
-  number: 1003
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
