@@ -1,37 +1,44 @@
+{% set name = "ciso" %}
 {% set version = "0.2.0" %}
 
 package:
-  name: ciso
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ioos/ciso/archive/v{{ version }}.tar.gz
-  sha256: 7a4859b4344d6a29cf075d37e4b0e62e997286d1355c5e8705109c04e0a13afb
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ciso-{{ version }}.tar.gz
+  sha256: 4d1bbd75a8197268da24d018f153bc3dd109eafefe16a732e4db6b636d73850b
 
 build:
+  skip: true  # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - pip
     - cython
     - numpy
+    - setuptools-scm
+    - pip
   run:
     - python
+    - cython
     - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - ciso
   commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/ioos/ciso
-  license: MIT
+  license: BSD-2-Clause
   license_file: LICENSE.txt
   summary: Cythonized Iso Surfaces (CISO)
 
