@@ -12,11 +12,12 @@ source:
 build:
   skip: True  # [py<38 or python_impl == "pypy"]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
@@ -26,7 +27,6 @@ requirements:
   run:
     - python
     - cython
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
