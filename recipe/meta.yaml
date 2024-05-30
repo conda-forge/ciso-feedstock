@@ -1,5 +1,5 @@
 {% set name = "ciso" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,26 +7,27 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ciso-{{ version }}.tar.gz
-  sha256: 4d1bbd75a8197268da24d018f153bc3dd109eafefe16a732e4db6b636d73850b
+  sha256: f91a5a43d116703d7038be34f694d290a5bb0d0c9a63ec7db8d1653e6e8588da
 
 build:
-  skip: True  # [py<38 or python_impl == "pypy"]
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  skip: True  # [py<39 or python_impl == "pypy"]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler("c") }}
     - {{ stdlib("c") }}
   host:
     - python
+    - setuptools >=41.2
+    - setuptools-scm
     - cython
     - numpy
-    - setuptools-scm
     - pip
   run:
     - python
-    - cython
+    - numpy
 
 test:
   imports:
