@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ciso-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ciso-{{ version }}.tar.gz
   sha256: f91a5a43d116703d7038be34f694d290a5bb0d0c9a63ec7db8d1653e6e8588da
 
 build:
   skip: True  # [py<39 or python_impl == "pypy"]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   build:
